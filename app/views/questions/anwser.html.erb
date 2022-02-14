@@ -1,0 +1,16 @@
+<div class="question">
+<%= params[:question] %>
+<p> <i>-You </i></p>
+</div>
+<div class="answer">
+<% if params[:question] == 'I am going to work' %>
+<p><%= @answer[0] %></p>
+<% elsif params[:question].end_with?('?') %>
+<p><%= @answer[1] %></p>
+<% else %>
+<p><%= @answer[2] %></p>
+<% end %>
+<p> <i>-Your coach</i> </p>
+</div>
+
+<%= link_to "Ask a new question", ask_path %>
